@@ -1,7 +1,9 @@
 ---
 # defaults file for Solana RPC
-solana_version: "v1.16.24"
+solana_version: "v1.18.22"
 ledger_disk: "nvme1n1"
 setup_disks: "true"
 download_snapshot: "true"
-swap_mb: "100000"
+swap_mb: "102400"
+geyser: "grpc"
+geyser_version: "v1.15.0+solana.1.18.22"

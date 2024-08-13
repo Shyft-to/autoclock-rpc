@@ -17,7 +17,7 @@
     path: /etc/logrotate.d/sol
     block: |
       /mnt/logs/solana-validator.log {
-        rotate 7
+        rotate 2
         daily
         missingok
         postrotate

@@ -1,0 +1,33 @@
+- name: Setup nginx repository
+  become: true
+  become_user: root
+  shell: |
+    curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
+    echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] http://nginx.org/packages/ubuntu `lsb_release -cs` nginx" | sudo tee /etc/apt/sources.list.d/nginx.list
+    echo -e "Package: *\nPin: origin nginx.org\nPin: release o=nginx\nPin-Priority: 900\n" | sudo tee /etc/apt/preferences.d/99nginx
+  args:
+    executable: /bin/bash
+
+- name: Install nginx
+  become: true
+  become_user: root
+  apt:
+    update_cache: yes
+    pkg:
+    - nginx
+
+- name: Copy nginx.conf
+  become: true
+  become_user: root
+  copy:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+    owner: root
+    group: root
+
+- name: Start nginx
+  become: true
+  become_user: root
+  service:
+    name: nginx
+    state: started

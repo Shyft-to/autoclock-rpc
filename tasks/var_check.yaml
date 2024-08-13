@@ -15,3 +15,9 @@
     that:
       - ((ramdisk_size is defined) and (ansible_memtotal_mb >= 1500*ramdisk_size) or ramdisk_size is not defined)
     msg: machine ram is too low for ram diskq. comment out ramdisk_size in defaults/main.yml
+
+- name: Validate Geyser vars
+  assert:
+    that:
+      - ((geyser is defined) and (geyser_version is defined) or geyser is not defined)
+    msg: Geyser version/tag not defined

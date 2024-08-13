@@ -20,6 +20,13 @@
     - chrony
     - htop
     - acl
+    - protobuf-compiler
+    - libprotobuf-dev
+    - libsasl2-dev #grpc
+    - zlib1g-dev
+    - libzstd-dev
+    - debian-archive-keyring
+    - gnupg2
       
 - name: check if cargo is installed
   become: true

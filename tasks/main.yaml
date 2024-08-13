@@ -22,6 +22,9 @@
 - name: logrotate
   include_tasks: rotate.yaml
 
+- name: setup nginx
+  include_tasks: nginx.yaml
+
 - name: git
   include_tasks: git.yaml
 
@@ -37,6 +40,10 @@
 - name: snapshot download
   include_tasks: snapshot_downloader.yaml
   when: download_snapshot|default(true)|bool == true
+
+- name: Geyser GRPC
+  include_tasks: grpc_geyser.yaml
+  when: geyser == "grpc"
 
 - name: restart without waiting
   become: true

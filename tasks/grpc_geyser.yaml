@@ -1,0 +1,22 @@
+- name: Download GRPC geyser
+  become: true
+  become_user: solana
+  git:
+    repo: 'https://github.com/rpcpool/yellowstone-grpc.git'
+    dest: /home/solana/grpc-geyser
+    version: tags/{{ geyser_version }}
+
+- name: Save config
+  become: true
+  become_user: solana
+  src: grpc_config.json
+  dest: /home/solana/grpc-config.json
+
+- name: Add geyser config in validator.sh
+  become: true
+  become_user: solana
+  lineinfile:
+    path: /home/solana/validator.sh
+    line: '--geyser-plugin-config /home/solana/grpc-config.json \'
+    insertafter: '^--tpu-use-quic'
+

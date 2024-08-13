@@ -67,6 +67,8 @@ time ansible-playbook runner.yaml
 - ledger_disk: the disk that will be wiped, formatted with ext4 and then mounted to /mnt/solana-ledger
 - ramdisk_size: this is optional and only necessary if you want to use ramdisk for the validator - carves out a large portion of the RAM to store the accountsdb. On a 512 GB RAM instance, this can be set to 300 GB (variable value is in GB so 300)
 - solana_installer: whether to install solana from the installer. If set to false it will build solana cli from the solana github
+- geyser: Whether to install kafka or grpc geyser. (grpc/kafka)
+- geyser_version: Git tag of repository to install geyser plugin. Should match with solana version.
 
 ### Step 7: Once ansible finishes, switch to the solana user with:
 
