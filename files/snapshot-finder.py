@@ -475,6 +475,7 @@ logger.info(f'{RPC=}\n'
       f'{THREADS_COUNT=}\n'
       f'{NUM_OF_MAX_ATTEMPTS=}\n'
       f'{WITH_PRIVATE_RPC=}\n'
+      f'{VERSION=}\n'
       f'{SORT_ORDER=}')
 
 try:
