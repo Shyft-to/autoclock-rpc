@@ -17,8 +17,9 @@
 - name: Save config
   become: true
   become_user: solana
-  src: grpc_config.json
-  dest: /home/solana/grpc-config.json
+  copy:
+    src: grpc_config.json
+    dest: /home/solana/grpc-config.json
 
 - name: Add geyser config in validator.sh
   become: true
