@@ -6,6 +6,14 @@
     dest: /home/solana/grpc-geyser
     version: tags/{{ geyser_version }}
 
+- name: build geyser
+  become: true
+  become_user: solana
+  shell: source /home/solana/.cargo/env && cargo build --release
+  args:
+    chdir: /home/solana/grpc-geyser
+    executable: /bin/bash
+
 - name: Save config
   become: true
   become_user: solana
