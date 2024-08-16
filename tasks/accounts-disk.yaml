@@ -1,0 +1,27 @@
+- name: check mount
+  become: true
+  become_user: root
+  shell: df -h | grep mnt/solana-accounts
+  ignore_errors: yes
+  register: mount_mnt
+
+- name: format disks with ext4
+  become: true
+  become_user: root
+  shell: mkfs.ext4 /dev/{{ accounts_disk }}
+  when: mount_mnt.rc != 0
+
+- name: mount disks for accounts
+  become: true
+  become_user: root
+  shell: mount /dev/{{ accounts_disk }} /mnt/solana-accounts && chown -R solana:solana /mnt/solana-accounts
+  when: mount_mnt.rc != 0
+
+- name: add mounted disk to fstab
+  become: true
+  become_user: root
+  lineinfile:
+    dest: /etc/fstab
+    state: present
+    line: "/dev/{{ accounts_disk }}    /mnt/solana-accounts    ext4    defaults    0    1"
+

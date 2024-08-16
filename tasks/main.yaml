@@ -19,6 +19,10 @@
   include_tasks: disks.yaml
   when: setup_disks|default(false)|bool == true
 
+- name: setup accounts disks
+  include_tasks: disks.yaml
+  when: setup_disks|default(false)|bool == true and accounts_disk is defined
+
 - name: logrotate
   include_tasks: rotate.yaml
 
