@@ -43,7 +43,7 @@
 
 - name: Geyser GRPC
   include_tasks: grpc_geyser.yaml
-  when: geyser == "grpc"
+  when: geyser is defined and geyser == "grpc"
 
 - name: snapshot download
   include_tasks: snapshot_downloader.yaml
