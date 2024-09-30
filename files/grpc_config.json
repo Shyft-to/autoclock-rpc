@@ -8,12 +8,12 @@
         "max_decoding_message_size": "16_777_216",
         "snapshot_plugin_channel_capacity": null,
         "snapshot_client_channel_capacity": "50_000_000",
-        "channel_capacity": "100_000",
+        "channel_capacity": "150_000",
         "unary_concurrency_limit": 100,
         "unary_disabled": false,
         "filters": {
             "accounts": {
-                "max": 1,
+                "max": 10,
                 "any": false,
                 "account_max": 100000,
                 "account_reject": ["TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"],
@@ -24,7 +24,7 @@
                 "max": 1
             },
             "transactions": {
-                "max": 1,
+                "max": 10,
                 "any": false,
                 "account_include_max": 10000,
                 "account_include_reject": ["TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"],
