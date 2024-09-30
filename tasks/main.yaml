@@ -20,7 +20,7 @@
   when: setup_disks|default(false)|bool == true
 
 - name: setup accounts disks
-  include_tasks: accounts-disks.yaml
+  include_tasks: accounts-disk.yaml
   when: setup_disks|default(false)|bool == true and accounts_disk is defined
 
 - name: logrotate
