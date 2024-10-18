@@ -6,7 +6,7 @@
       - tqdm
       - requests
     executable: pip3
-    break_system_packages: true
+    extra_args: --break-system-packages
 
 - name: download latest snapshot
   become: true
