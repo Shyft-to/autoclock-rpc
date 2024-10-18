@@ -43,7 +43,7 @@
   become_user: solana
   copy:
     src: snapcheck.py
-    dest: /mnt/snapcheck.py
+    dest: /home/solana/snapcheck.py
     owner: solana
     group: solana
 
