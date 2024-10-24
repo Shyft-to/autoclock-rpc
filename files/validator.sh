@@ -1,10 +1,7 @@
 #!/bin/bash
-#--no-genesis-fetch \
-#--no-snapshot-fetch \
-#--skip-startup-ledger-verification \
 export RUST_LOG=solana_metrics::metrics=warn,solana_gossip::cluster_info=warn,info
 export SOLANA_METRICS_CONFIG=host=http://metrics-pool.shyft.to:8086,db=mainnet-beta,u=scratch_writer,p=topsecret
-exec /mnt/solana/target/release/solana-validator \
+exec /mnt/agave/target/release/agave-validator \
 --identity /home/solana/rpc_node.json \
 --entrypoint entrypoint.mainnet-beta.solana.com:8001 \
 --entrypoint entrypoint2.mainnet-beta.solana.com:8001 \
@@ -27,7 +24,6 @@ exec /mnt/solana/target/release/solana-validator \
 --rpc-port 8899 \
 --dynamic-port-range 8002-8099 \
 --no-port-check \
---halt-on-trusted-validators-accounts-hash-mismatch \
 --gossip-port 8001 \
 --no-voting \
 --private-rpc \
@@ -39,7 +35,7 @@ exec /mnt/solana/target/release/solana-validator \
 --ledger /mnt/solana-ledger \
 --replay-slots-concurrently \
 --expected-genesis-hash 5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d \
---limit-ledger-size 50000000 \
+--limit-ledger-size 150000000 \
 --rpc-send-default-max-retries 3 \
 --rpc-send-service-max-retries 3 \
 --rpc-send-retry-ms 2000 \
@@ -49,6 +45,6 @@ exec /mnt/solana/target/release/solana-validator \
 --accounts-index-scan-results-limit-mb 250 \
 --accounts-db-cache-limit-mb 10240 \
 --no-os-disk-stats-reporting \
---minimal-snapshot-download-speed 21943040 \
+--minimal-snapshot-download-speed 31943040 \
 --tpu-use-quic \
 --log /mnt/logs/solana-validator.log

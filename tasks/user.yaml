@@ -29,4 +29,4 @@
   become_user: root
   lineinfile:
     path: /home/solana/.bashrc
-    line: 'export PATH=/mnt/solana/target/release:$PATH'
+    line: 'export PATH=/mnt/agave/target/release:$PATH'
