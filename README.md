@@ -57,7 +57,7 @@ cd autoclock-rpc
 - check the values set in `defaults/main.yml` and update to the values you want
 
 ```
-time ansible-playbook runner.yaml
+time ansible-playbook -vv runner.yaml
 ```
 
 #### ~ Parameters explained ~
