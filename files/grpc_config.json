@@ -14,7 +14,7 @@
         "filters": {
             "accounts": {
                 "max": 10,
-                "any": false,
+                "any": true,
                 "account_max": 100000,
                 "account_reject": ["TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"],
                 "owner_max": 10,
