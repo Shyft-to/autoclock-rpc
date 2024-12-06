@@ -27,9 +27,7 @@ exec /mnt/agave/target/release/agave-validator \
 --gossip-port 8001 \
 --no-voting \
 --private-rpc \
---enable-extended-tx-metadata-storage \
 --disable-banking-trace \
---enable-rpc-transaction-history \
 --wal-recovery-mode skip_any_corrupted_record \
 --accounts /mnt/solana-accounts \
 --ledger /mnt/solana-ledger \

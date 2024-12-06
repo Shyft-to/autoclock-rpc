@@ -69,6 +69,8 @@ time ansible-playbook -vv runner.yaml
 - solana_installer: whether to install solana from the installer. If set to false it will build solana cli from the solana github
 - geyser: Whether to install kafka or grpc geyser. (grpc/kafka)
 - geyser_version: Git tag of repository to install geyser plugin. Should match with solana version.
+- index: Whether to enable indexes on current node. Default: false
+- txn_history: Whether to enable transaction history on current node. Default: false
 
 ### Step 7: Once ansible finishes, switch to the solana user with:
 
