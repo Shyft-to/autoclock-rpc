@@ -82,3 +82,8 @@
   become_user: root
   shell: /home/solana/restart.sh
   when: download_snapshot|default(true)|bool == false
+
+- name: Start monitor script
+  become: true
+  become_user: root
+  shell: systemctl enable --now monitor-sol.service

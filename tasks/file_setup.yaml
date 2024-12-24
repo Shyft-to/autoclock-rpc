@@ -65,3 +65,23 @@
     owner: solana
     group: solana
 
+- name: copy monitor.sh
+  become: true
+  become_user: solana
+  copy:
+    src: monitor.sh
+    dest: /home/solana/monitor.sh
+    owner: solana
+    group: solana
+    mode: "0755"
+
+- name: setup monitor-sol.service
+  become: true
+  become_user: root
+  copy:
+    src: sol.service
+    dest: /etc/systemd/system/monitor-sol.service
+    owner: root
+    group: root
+    mode: "0755"
+
