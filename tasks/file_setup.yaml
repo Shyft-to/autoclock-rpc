@@ -79,7 +79,7 @@
   become: true
   become_user: root
   copy:
-    src: sol.service
+    src: monitor-sol.service
     dest: /etc/systemd/system/monitor-sol.service
     owner: root
     group: root
