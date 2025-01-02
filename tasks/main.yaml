@@ -52,7 +52,7 @@
   blockinfile:
     path: /home/solana/validator.sh
     block: |
-      --enable-extended-tx-metadata-storage
+      --enable-extended-tx-metadata-storage \
       --enable-rpc-transaction-history \
     insertafter: '^--tpu-use-quic'
 
