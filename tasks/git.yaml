@@ -5,6 +5,7 @@
     repo: 'https://github.com/anza-xyz/agave.git'
     dest: /mnt/agave
     version: tags/v{{ solana_version }}
+    force: true
 
 - name: build solana
   become: true

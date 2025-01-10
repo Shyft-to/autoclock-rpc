@@ -5,6 +5,7 @@
     repo: 'https://github.com/rpcpool/yellowstone-grpc.git'
     dest: /home/solana/grpc-geyser
     version: tags/{{ geyser_version }}
+    force: true
 
 - name: build geyser
   become: true
@@ -20,6 +21,7 @@
   copy:
     src: grpc_config.json
     dest: /home/solana/grpc-config.json
+    force: true
 
 - name: Add geyser config in validator.sh
   become: true
