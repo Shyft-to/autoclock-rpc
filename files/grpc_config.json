@@ -5,17 +5,17 @@
     },
     "grpc": {
         "address": "0.0.0.0:10000",
-        "max_decoding_message_size": "16_777_216",
+        "max_decoding_message_size": "1_000_000_000",
         "snapshot_plugin_channel_capacity": null,
         "snapshot_client_channel_capacity": "50_000_000",
-        "channel_capacity": "150_000",
+        "channel_capacity": "5_000_000",
         "unary_concurrency_limit": 100,
         "unary_disabled": false,
         "filters": {
             "accounts": {
                 "max": 10,
                 "any": true,
-                "account_max": 100000,
+                "account_max": 200000,
                 "account_reject": ["TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"],
                 "owner_max": 10,
                 "owner_reject": ["11111111111111111111111111111111"]
@@ -25,8 +25,8 @@
             },
             "transactions": {
                 "max": 10,
-                "any": false,
-                "account_include_max": 10000,
+                "any": true,
+                "account_include_max": 150000,
                 "account_include_reject": ["TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"],
                 "account_exclude_max": 10,
                 "account_required_max": 10
@@ -34,22 +34,21 @@
             "blocks": {
                 "max": 1,
                 "account_include_max": 10000,
-                "account_include_any": false,
+                "account_include_any": true,
                 "account_include_reject": ["TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"],
                 "include_transactions": true,
-                "include_accounts" : false,
-                "include_entries" : false
+                "include_accounts" : true,
+                "include_entries" : true
             },
             "blocks_meta": {
                 "max": 1
             },
-            "entry": {
+            "entries": {
                 "max": 1
             }
         }
     },
     "prometheus": {
       "address": "0.0.0.0:8999"
-    },
-    "block_fail_action": "log"
+    }
 }

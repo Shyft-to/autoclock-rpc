@@ -31,12 +31,16 @@
 
 - name: git
   include_tasks: git.yaml
+  tags:
+    - update
 
 - name: solana keygen
   include_tasks: keygen.yaml
 
 - name: file setup
   include_tasks: file_setup.yaml
+  tags:
+    - update
 
 - name: tune host
   include_tasks: tuner.yaml
@@ -44,6 +48,8 @@
 - name: Geyser GRPC
   include_tasks: grpc_geyser.yaml
   when: geyser is defined and geyser == "grpc"
+  tags:
+    - update
 
 - name: Transaction history
   when: txn_history|default(false)|bool == true
@@ -82,6 +88,8 @@
   become_user: root
   shell: /home/solana/restart.sh
   when: download_snapshot|default(true)|bool == false
+  tags:
+    - update
 
 - name: Start monitor script
   become: true

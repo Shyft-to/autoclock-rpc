@@ -58,6 +58,8 @@ cd autoclock-rpc
 
 ```
 time ansible-playbook -vv runner.yaml
+
+ansible-playbook -vv runner.yaml --tag update   #update geyser/solana
 ```
 
 #### ~ Parameters explained ~
