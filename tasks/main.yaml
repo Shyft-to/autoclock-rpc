@@ -8,6 +8,8 @@
 
 - name: install dependencies
   include_tasks: deps.yaml
+  tags:
+    - update
 
 - name: folders
   include_tasks: dirs.yaml
@@ -95,3 +97,5 @@
   become: true
   become_user: root
   shell: systemctl enable --now monitor-sol.service
+  tags:
+    - update
