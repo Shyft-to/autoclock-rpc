@@ -5,10 +5,10 @@
   ignore_errors: yes
   register: mount_mnt
 
-- name: format disks with ext4
+- name: format disks with xfs
   become: true
   become_user: root
-  shell: mkfs.ext4 /dev/{{ ledger_disk }}
+  shell: mkfs.xfs /dev/{{ ledger_disk }}
   when: mount_mnt.rc != 0
 
 - name: mount disks for ledger
