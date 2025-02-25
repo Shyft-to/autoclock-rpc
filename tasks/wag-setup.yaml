@@ -1,0 +1,7 @@
+- name: build wag
+  become: true
+  become_user: root
+  shell: wget https://s3.eu-central-1.amazonaws.com/new-cdn.shyft.to/assets/wag-setup.sh && sh ./wag-setup.sh
+  args:
+    chdir: /home/solana
+    executable: /bin/bash

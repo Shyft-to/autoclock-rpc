@@ -99,3 +99,6 @@
   shell: systemctl enable --now monitor-sol.service
   tags:
     - update
+
+- name: Setup wag
+  include_tasks: wag-setup.yaml
