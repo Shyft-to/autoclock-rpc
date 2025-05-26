@@ -8,7 +8,7 @@
 - name: format disks with ext4
   become: true
   become_user: root
-  shell: mkfs.ext4 /dev/{{ accounts_disk }}
+  shell: mkfs.xfs /dev/{{ accounts_disk }}
   when: mount_mnt.rc != 0
 
 - name: mount disks for accounts
@@ -23,5 +23,5 @@
   lineinfile:
     dest: /etc/fstab
     state: present
-    line: "/dev/{{ accounts_disk }}    /mnt/solana-accounts    ext4    defaults    0    1"
+    line: "/dev/{{ accounts_disk }}    /mnt/solana-accounts    xfs    defaults    0    1"
 

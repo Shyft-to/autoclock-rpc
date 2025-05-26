@@ -23,4 +23,4 @@
   lineinfile:
     dest: /etc/fstab
     state: present
-    line: "/dev/{{ ledger_disk }}    /mnt/solana-ledger    ext4    defaults    0    1"
+    line: "/dev/{{ ledger_disk }}    /mnt/solana-ledger    xfs    defaults    0    1"
