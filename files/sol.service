@@ -1,6 +1,5 @@
 [Unit]
 Description=Solana Validator
-After=network.target
 StartLimitIntervalSec=0
 
 [Service]
