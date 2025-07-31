@@ -28,9 +28,6 @@
 - name: setup nginx
   include_tasks: nginx.yaml
 
-- name: solana keygen
-  include_tasks: keygen.yaml
-
 - name: file setup
   include_tasks: file_setup.yaml
   tags:
@@ -65,6 +62,9 @@
   include_tasks: git.yaml
   tags:
     - update
+
+- name: solana keygen
+  include_tasks: keygen.yaml
 
 - name: Geyser GRPC
   include_tasks: grpc_geyser.yaml
