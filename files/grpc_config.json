@@ -11,6 +11,7 @@
         "channel_capacity": "5_000_000",
         "unary_concurrency_limit": 100,
         "unary_disabled": false,
+        "replay_stored_slots": 100,
         "filters": {
             "accounts": {
                 "max": 10,
