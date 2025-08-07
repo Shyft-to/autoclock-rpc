@@ -38,7 +38,7 @@ exec /mnt/agave/target/release/agave-validator \
 --rpc-send-service-max-retries 3 \
 --rpc-send-retry-ms 2000 \
 --full-rpc-api \
---snapshot-interval-slots 0 \
+--no-snapshots \
 --accounts-index-memory-limit-mb 350 \
 --accounts-index-scan-results-limit-mb 250 \
 --accounts-db-cache-limit-mb 10240 \
