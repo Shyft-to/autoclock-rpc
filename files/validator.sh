@@ -39,9 +39,10 @@ exec /mnt/agave/target/release/agave-validator \
 --rpc-send-retry-ms 2000 \
 --full-rpc-api \
 --no-snapshots \
---accounts-index-memory-limit-mb 350 \
+--experimental-poh-pinned-cpu-core 3 \
+--accounts-index-memory-limit-mb 3500 \
 --accounts-index-scan-results-limit-mb 250 \
---accounts-db-cache-limit-mb 10240 \
+--accounts-db-cache-limit-mb 102400 \
 --no-os-disk-stats-reporting \
 --minimal-snapshot-download-speed 31943040 \
 --tpu-use-quic \
