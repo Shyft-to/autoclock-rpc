@@ -31,7 +31,6 @@ exec /mnt/agave/target/release/agave-validator \
 --wal-recovery-mode skip_any_corrupted_record \
 --accounts /mnt/solana-accounts \
 --ledger /mnt/solana-ledger \
---replay-slots-concurrently \
 --expected-genesis-hash 5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d \
 --limit-ledger-size 150000000 \
 --rpc-send-default-max-retries 3 \
@@ -40,10 +39,7 @@ exec /mnt/agave/target/release/agave-validator \
 --full-rpc-api \
 --no-snapshots \
 --experimental-poh-pinned-cpu-core 3 \
---accounts-index-memory-limit-mb 3500 \
 --accounts-index-scan-results-limit-mb 250 \
---accounts-db-cache-limit-mb 102400 \
 --no-os-disk-stats-reporting \
 --minimal-snapshot-download-speed 31943040 \
---tpu-use-quic \
 --log /mnt/logs/solana-validator.log

@@ -56,7 +56,7 @@ do
   if [ "$slot" -gt $SLOT_DIFFERENCE ]; then
     echo "Behind resstart, On for: $ELAPSED_SECONDS"
     RUNNING=false
-    sh /home/solana/restart.sh 1
+    sh /home/solana/download_start.sh 1
   else
     echo "RPC status ok, behind by slot: $slot, running form: $ELAPSED_SECONDS"
   fi

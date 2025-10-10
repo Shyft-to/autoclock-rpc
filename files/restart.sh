@@ -5,3 +5,4 @@ if [ $# -eq 0 ]
 fi
 sudo systemctl stop sol.service
 sudo systemctl start sol.service
+sudo systemctl restart monitor-sol.service

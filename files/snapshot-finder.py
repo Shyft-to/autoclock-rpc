@@ -27,7 +27,7 @@ parser.add_argument('--max_snapshot_age', default=1300, type=int, help='How many
 parser.add_argument('--min_download_speed', default=100, type=int, help='Minimum average snapshot download speed in megabytes')
 parser.add_argument('--max_download_speed', type=int, 
 help='Maximum snapshot download speed in megabytes - https://github.com/c29r3/solana-snapshot-finder/issues/11. Example: --max_download_speed 192')
-parser.add_argument('--max_latency', default=200, type=int, help='The maximum value of latency (milliseconds). If latency > max_latency --> skip')
+parser.add_argument('--max_latency', default=400, type=int, help='The maximum value of latency (milliseconds). If latency > max_latency --> skip')
 parser.add_argument('--version', type=str, help='version of the snapshot required')
 parser.add_argument('--with_private_rpc', action="store_true", help='Enable adding and checking RPCs with the --private-rpc option.This slow down checking and searching but potentially increases'
                     ' the number of RPCs from which snapshots can be downloaded.')
