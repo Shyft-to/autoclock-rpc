@@ -8,6 +8,7 @@ Restart=always
 RestartSec=1
 User=solana
 LimitNOFILE=1000000
+LimitMEMLOCK=infinity
 LogRateLimitIntervalSec=0
 Environment="PATH=/mnt/agave/target/release/:/home/solana/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/snap/bin:/home/solana/.local/bin/:/home/solana/.local/bin/:/home/solana/.local/bin/"
 ExecStart=/home/solana/validator.sh
