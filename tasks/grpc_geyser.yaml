@@ -29,5 +29,5 @@
   lineinfile:
     path: /home/solana/validator.sh
     line: '--geyser-plugin-config /home/solana/grpc-config.json \'
-    insertafter: '^--tpu-use-quic'
+    insertafter: '^--full-rpc-api'
 
