@@ -6,7 +6,6 @@ RUNNING=false
 
 PROCESS_NAME="agave-validator"
 #PROCESS_NAME="solana-test-validator"
-#RPC_URL="http://84.32.186.148/a1fb2ed4-f5df-4688-982b-4fad1944ef0e"
 RPC_URL="http://localhost:8899"
 
 rpc_state() {
