@@ -69,3 +69,19 @@
   args:
     executable: /bin/bash
   ignore_errors: True
+
+- name: Disable restart on apt ugrades for validator 
+  become: true
+  become_user: root
+  shell:
+    # Note: this overwrite the file, if you want to append replace EOM with EOF
+      #bash -c 'cat >> /etc/needrestart/conf.d/sol.conf <<- EOM
+    cmd: |
+      bash -c 'cat >> test <<- EOM
+# Override service default selection (hash of regex).
+$nrconf{override_rc} = {
+    qr(^sol\.service$) => 0,
+};
+EOM'
+  args:
+    executable: /bin/bash
