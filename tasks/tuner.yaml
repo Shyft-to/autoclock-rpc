@@ -78,10 +78,10 @@
       #bash -c 'cat >> /etc/needrestart/conf.d/sol.conf <<- EOM
     cmd: |
       bash -c 'cat >> test <<- EOM
-# Override service default selection (hash of regex).
-$nrconf{override_rc} = {
-    qr(^sol\.service$) => 0,
-};
-EOM'
+      # Override service default selection (hash of regex).
+      $nrconf{override_rc} = {
+          qr(^sol\.service$) => 0,
+      };
+      EOM'
   args:
     executable: /bin/bash
