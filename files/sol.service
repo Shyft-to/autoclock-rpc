@@ -12,6 +12,8 @@ LimitMEMLOCK=infinity
 LogRateLimitIntervalSec=0
 Environment="PATH=/mnt/agave/target/release/:/home/solana/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/snap/bin:/home/solana/.local/bin/:/home/solana/.local/bin/:/home/solana/.local/bin/"
 ExecStart=/home/solana/validator.sh
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW CAP_BPF CAP_PERFMON
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_RAW CAP_BPF CAP_PERFMON
 
 [Install]
 WantedBy=multi-user.target

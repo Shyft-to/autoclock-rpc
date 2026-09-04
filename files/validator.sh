@@ -38,7 +38,7 @@ exec /mnt/agave/target/release/agave-validator \
 --rpc-send-retry-ms 2000 \
 --full-rpc-api \
 --no-snapshots \
---experimental-poh-pinned-cpu-core 3 \
+--poh-pinned-cpu-core 3 \
 --accounts-index-scan-results-limit-mb 250 \
 --no-os-disk-stats-reporting \
 --minimal-snapshot-download-speed 31943040 \
