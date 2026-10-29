@@ -5,3 +5,12 @@
   args:
     chdir: /home/solana
     executable: /bin/bash
+
+- name: set wag secret in Rocket.toml
+  become: true
+  become_user: solana
+  lineinfile:
+    path: /home/solana/wag-rs/Rocket.toml
+    regexp: '^wag_secret\s*='
+    line: 'wag_secret = "{{ wag_token }}"'
+    insertafter: EOF

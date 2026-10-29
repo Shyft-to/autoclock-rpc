@@ -1,6 +1,6 @@
 ---
 # defaults file for Solana RPC
-solana_version: "4.2.2"
+solana_version: "4.4.0"
 ledger_disk: "nvme1n1"
 accounts_disk: "nvme0n1"
 setup_disks: "true"
@@ -8,4 +8,6 @@ index: "false"
 txn_history: "false"
 download_snapshot: "true"
 geyser: "grpc"
-geyser_version: "v15.2.0+solana.4.2.2"
+geyser_version: "v17.0.0+solana.4.4.0"
+token: "abc"
+wag_token: "123sdf"

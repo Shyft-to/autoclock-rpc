@@ -13,6 +13,7 @@
   become_user: root
   apt:
     update_cache: yes
+    state: latest
     pkg:
     - nginx
 
@@ -24,6 +25,14 @@
     dest: /etc/nginx/nginx.conf
     owner: root
     group: root
+
+- name: Replace token in nginx.conf
+  become: true
+  become_user: root
+  replace:
+    path: /etc/nginx/nginx.conf
+    regexp: 'ad514e03-d872-46b4-97f1-5c11bdcb2436'
+    replace: '{{ token }}'
 
 - name: Start nginx
   become: true

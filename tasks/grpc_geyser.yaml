@@ -23,6 +23,15 @@
     dest: /home/solana/grpc-config.json
     force: true
 
+- name: Add x_token in grpc config
+  become: true
+  become_user: solana
+  lineinfile:
+    path: /home/solana/grpc-config.json
+    regexp: '^\s*"x_token"\s*:'
+    line: '    "x_token": "{{ token }}",'
+    insertafter: '^\s*"address": "0\.0\.0\.0:10000",'
+
 - name: Add geyser config in validator.sh
   become: true
   become_user: solana
