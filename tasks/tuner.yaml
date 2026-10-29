@@ -1,3 +1,26 @@
+- name: Disable all active swap
+  become: true
+  become_user: root
+  command: swapoff -a
+
+- name: Remove swap entries from fstab so swap stays disabled after reboot
+  become: true
+  become_user: root
+  replace:
+    path: /etc/fstab
+    regexp: '^([^#\n].*\sswap\s.*)$'
+    replace: '# \1'
+
+- name: Mask systemd swap units
+  become: true
+  become_user: root
+  shell: |
+    systemctl list-unit-files --type=swap --no-legend | awk '{print $1}' | xargs -r systemctl mask
+    systemctl list-units --type=swap --all --no-legend | awk '{print $1}' | xargs -r systemctl mask
+  args:
+    executable: /bin/bash
+  ignore_errors: True
+
 - name: Set sysctl performance variables
   become: true
   become_user: root

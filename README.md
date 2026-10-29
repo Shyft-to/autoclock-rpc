@@ -2,7 +2,7 @@
 
 ### What is it good for?
 
-The goal of the Autoclock RPC ansible playbook is to have you caught up on the Solana blockchain within 15 minutes, assuming you have a capable server and your SSH key ready. It formats/raids/mounts disks, sets up swap, ramdisk (optional), downloads from snapshot and restarts everything. It is currently configured for a Latitude.sh s3.large.x86 (see "Optimal Machine Settings" below), but we hope to adapt it more widely later on. For a more catch-all ansible playbook and in depth guide on RPC's refer to https://github.com/rpcpool/solana-rpc-ansible
+The goal of the Autoclock RPC ansible playbook is to have you caught up on the Solana blockchain within 15 minutes, assuming you have a capable server and your SSH key ready. It formats/raids/mounts disks, disables all swap, sets up ramdisk (optional), downloads from snapshot and restarts everything. It is currently configured for a Latitude.sh s3.large.x86 (see "Optimal Machine Settings" below), but we hope to adapt it more widely later on. For a more catch-all ansible playbook and in depth guide on RPC's refer to https://github.com/rpcpool/solana-rpc-ansible
 
 ### Optimal Machine Settings
 
@@ -65,7 +65,6 @@ ansible-playbook -vv runner.yaml --tag update   #update geyser/solana
 #### ~ Parameters explained ~
 
 - solana_version: the version of solana that we want to run. Check the Solana Tech discord’s mb-announcements channel for the recommended version.
-- swap_mb: megabytes of swap. This can be set this to 50% of RAM or even lower. 100 GB is fine on a 512 GB RAM machine (variable value is in MB so 100000)
 - ledger_disk: the disk that will be wiped, formatted with ext4 and then mounted to /mnt/solana-ledger
 - ramdisk_size: this is optional and only necessary if you want to use ramdisk for the validator - carves out a large portion of the RAM to store the accountsdb. On a 512 GB RAM instance, this can be set to 300 GB (variable value is in GB so 300)
 - solana_installer: whether to install solana from the installer. If set to false it will build solana cli from the solana github
